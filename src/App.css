@@ -1,0 +1,155 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(-45deg, #00d9ff, #00ffaa, #09ff00, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.cityInput {
+  outline: none;
+  border: none;
+  width: 450px;
+  height: 100px;
+  border-radius: 87px;
+  padding-left: 50px;
+  font-size: 20px;
+}
+
+#suggestions {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid green;
+  background-color: coral;
+  position: absolute;
+  left: 310px;
+  top: 5px;
+  font-size: 50px;
+}
+
+.display {
+  color: white;
+  border-radius: 87px;
+  margin: 20px auto;
+  width: 500px;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.location{
+    color: black;
+    background-color: white;
+    padding: 0px auto;
+    margin: 5px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 220px
+}
+
+h3{
+    margin: 0px auto;
+}
+
+.weatherItems {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.leftWeatherItems, .rightWeatherItems {
+    width: 50%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 80px;
+}
+
+.temperature, .pressure, .humidity, .clouds, .rain, .wind {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(0, 0, 83);
+    border-radius: 80px;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.pressure {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(0, 0, 83);
+    flex-grow: 2;
+    border-radius: 80px;
+}
+
+.humidity {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(0, 0, 83);
+    flex-grow: 2;
+    border-radius: 80px;
+}
+
+.clouds {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(0, 0, 83);
+    flex-grow: 2;
+    border-radius: 80px;
+}
+
+.rain {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(0, 0, 83);
+    flex-grow: 2;
+    border-radius: 80px;
+}
+
+.wind {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(0, 0, 83);
+    flex-grow: 2;
+    border-radius: 80px;
+}
+
+
+
+h4{
+    margin: 10px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0px 10px;
+}
+
+li{
+    margin: 20px;
+}
