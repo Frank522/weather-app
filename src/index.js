@@ -4,7 +4,7 @@ import App from './App.js';
 import './App.css'
 import DataProcessor from './modules/data-processor.js';
 
-DataProcessor.process()
+DataProcessor.process();
 
 ReactDOM.render(
     <App weather/>,

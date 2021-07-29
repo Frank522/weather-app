@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 
-class Pressure extends Component{
-    render(){
-        return <div className="pressure">
-            <h4>Pressure</h4>
-            <p>6kPa</p>
-        </div>;
-    }
+class Pressure extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div className="pressure">
+        <h4>Pressure</h4>
+        <p>{this.props.value}</p>
+      </div>
+    );
+  }
 }
 
 export default Pressure;
