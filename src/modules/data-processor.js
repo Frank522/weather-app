@@ -12,10 +12,12 @@ const DataProcessor = (() => {
       ground: "?",
     },
     rain: {
-      rain1h: "1mm",
-      rain3h: "2mm",
-      snow1h: "1mm",
-      snow3h: "2mm",
+      one: "1mm",
+      three: "2mm",
+    },
+    snow: {
+      one: "1mm",
+      three: "2mm",
     },
     clouds: "34%",
     wind: {
@@ -28,18 +30,54 @@ const DataProcessor = (() => {
 
   let dirtyData = {};
 
-  const process = async () => {
+  const getData = async () => {
     const response = await fetch(
-      "http://api.openweathermap.org/data/2.5/weather?q=New Yrk&APPID=8ec226f0628c371ef233a098c1bfc274"
+      "http://api.openweathermap.org/data/2.5/weather?q=Sioux Falls&APPID=8ec226f0628c371ef233a098c1bfc274&units=imperial"
     );
     dirtyData = await response.json();
+    console.log(dirtyData);
   };
 
-  const getNewState = () => {
-      
+  const processData = () => {
+    cleanData.temp = {
+      temp: dirtyData.main.temp + "°F",
+      feels: dirtyData.main.feels_like + "°F",
+      max: dirtyData.main.temp_max + "°F",
+      min: dirtyData.main.temp_min + "°F",
+    };
+
+    cleanData.humidity = dirtyData.main.humidity + "%";
+
+    cleanData.pressure = dirtyData.main.pressure + "hPa";
+
+    cleanData.clouds = dirtyData.clouds.all + "%";
+
+    cleanData.wind = {
+      speed: dirtyData.wind.speed + "mph",
+      deg: dirtyData.wind.deg + "°",
+      gust: dirtyData.wind.gust + "mph",
+    };
+
+    if(dirtyData.rain){
+      cleanData.rain = {
+        one: dirtyData.rain,
+        three: dirtyData.rain
+      }
+    } else {
+      cleanData.rain = ''
+    }
+
+    if(dirtyData.snow){
+      cleanData.snow = {
+        one: dirtyData.snow,
+        three: dirtyData.snow,
+      }
+    } else {
+      cleanData.snow = ''
+    }
   };
 
-  return { process };
+  return { getData };
 })();
 
 export default DataProcessor;

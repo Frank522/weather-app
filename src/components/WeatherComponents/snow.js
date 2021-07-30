@@ -1,24 +1,24 @@
 import React, { Component } from "react";
 
-class Rain extends Component {
+class Snow extends Component {
   render() {
-    let rain = this.props.rain ? (
+    let snow = this.props.snow ? (
       <div className="rain">
-        <h4>Rain</h4>
+        <h4>Snow</h4>
         <p>
           <strong>Last Hour: </strong>
-          {this.props.rain.one}
+          {this.props.snow.one}
         </p>
         <p>
           <strong>Last 3 Hours: </strong>
-          {this.props.rain.three}
+          {this.props.snow.three}
         </p>
       </div>
     ) : (
       ""
     );
-    return rain;
+    return snow;
   }
 }
 
-export default Rain;
+export default Snow;
