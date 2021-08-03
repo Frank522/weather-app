@@ -60,8 +60,8 @@ const DataProcessor = (() => {
 
     if(dirtyData.rain){
       cleanData.rain = {
-        one: dirtyData.rain,
-        three: dirtyData.rain
+        one: dirtyData.rain['1h'] + "mm",
+        three: dirtyData.rain['3h'] + "mm",
       }
     } else {
       cleanData.rain = ''
@@ -69,8 +69,8 @@ const DataProcessor = (() => {
 
     if(dirtyData.snow){
       cleanData.snow = {
-        one: dirtyData.snow,
-        three: dirtyData.snow,
+        one: dirtyData.snow['1h'] + "mm",
+        three: dirtyData.snow['3h'] + "mm",
       }
     } else {
       cleanData.snow = ''
